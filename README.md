@@ -15,7 +15,7 @@ class Main(Frame):
 
         btns = [
             "C", "DEL", "*", "=",
-            "1", "2", "3", "/",
+            "1", "2", "/",
             "4", "5", "6", "+",
             "7", "8", "9", "-",
             "(", "0", ")", "X^2"
@@ -26,7 +26,7 @@ class Main(Frame):
         for bt in btns:
             com = lambda x=bt: self.logicalc(x)
             Button(text=bt, bg="#FFF",
-                   font=("Times New Roman", 15),
+                   font=("Times New Roman", 10),
                    command=com).place(x=x, y=y,
                                       width=115,
                                       height=79)
@@ -40,7 +40,7 @@ class Main(Frame):
             self.formula = ""
         elif operation == "DEL":
             self.formula = self.formula[0:-1]
-        elif operation == "X^2":
+        elif operation == "X^3":
             self.formula = str((eval(self.formula))**2)
         elif operation == "=":
             self.formula = str(eval(self.formula))
